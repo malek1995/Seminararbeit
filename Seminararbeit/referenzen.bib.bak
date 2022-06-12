@@ -1,0 +1,46 @@
+@online{onlinequelle1, 
+	title = {Der Clustering Guide: Definition, Methoden und Beispiele}, 
+	author ={Kilian},
+	year = {2022},
+	url={https://www.kobold.ai/clustering-guide/}
+}
+
+@article{strehl2002cluster,
+  title={Cluster ensembles---a knowledge reuse framework for combining multiple partitions},
+  author={Strehl, Alexander and Ghosh, Joydeep},
+  journal={Journal of machine learning research},
+  volume={3},
+  number={Dec},
+  pages={583--617},
+  year={2002}
+}
+@article{alqurashi2019clustering,
+  title={Clustering ensemble method},
+  author={Alqurashi, Tahani and Wang, Wenjia},
+  journal={International Journal of Machine Learning and Cybernetics},
+  volume={10},
+  number={6},
+  pages={1227--1246},
+  year={2019},
+  publisher={Springer}
+}
+@article{vega2011survey,
+  title={A survey of clustering ensemble algorithms},
+  author={Vega-Pons, Sandro and Ruiz-Shulcloper, Jos{\'e}},
+  journal={International Journal of Pattern Recognition and Artificial Intelligence},
+  volume={25},
+  number={03},
+  pages={337--372},
+  year={2011},
+  publisher={World Scientific}
+}
+@article{karypis1998fast,
+  title={A fast and high quality multilevel scheme for partitioning irregular graphs},
+  author={Karypis, George and Kumar, Vipin},
+  journal={SIAM Journal on scientific Computing},
+  volume={20},
+  number={1},
+  pages={359--392},
+  year={1998},
+  publisher={SIAM}
+}

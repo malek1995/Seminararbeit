@@ -6,8 +6,12 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{tikz}
+
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+
+\usepackage{biblatex}
+\addbibresource{referenzen.bib}
  
 \title{Ensemble Clustering}
 \subtitle{Seminar im Fachgebiet Wissensverarbeitung}
@@ -18,11 +22,10 @@
 
 \maketitle	
 
-\section{Einleitung}
-Menschen haben immer die Interesse, Sachen in Gruppen einzuordnen. Mit Hilfe ihren Sinnesorganen können sie das leicht machen. Der Mensch kann zwischen zwei Bildern von einem Hund und einer Katze sofort durch sein Sehen unterscheiden. Aber wie kann ein Computer das schaffen, das keine Sinnesorgane hat. \textbf{Clustering} und \textbf{Klassifikation } sind zwei Sachen, die das Computer benutzt, um Objekte in Gruppen oder Clusters anhand der Daten dieser Objekte einzuordnen.\\[4pt]
-\textbf{Klassifikation}: ist der Prozess, in dem entschieden wird, zu welchem Cluster das neue Objekt gehört. Aber hier wird darauf nicht eingegangen, sondern nur auf Clustering.  
+
+  
 \section{Was ist Clustering}
-\textbf{Clustering} ist die Methode im maschinellen Lernen und genauer gesagt “im überwachten Lernen”, Datenpunkte in Gruppen (Clusters) ohne vorhandenes Wissen zu ordnen.  Um das zu schaffen, wird die Ähnlichkeit zwischen die Daten berechnet.\\[4pt]
+\textbf{Clustering} ist die Methode im maschinellen Lernen und genauer gesagt “im unüberwachten Lernen”, Datenpunkte in Gruppen (Clusters) ohne vorhandenes Wissen zu ordnen.  Um das zu schaffen, wird die Ähnlichkeit zwischen die Daten berechnet.\\[4pt]
 Ziel von Clustering: 
 \begin{itemize}
 	\item Ähnliche Datenpunkte (Objekte) sollen im selben Cluster sein. 
@@ -30,11 +33,11 @@ Ziel von Clustering:
 \end{itemize}
 Also Clustering führt zu der Verringerung von der Komplexität.\\[4pt]
 Die gefundenen Ähnlichkeitsgruppen können graphentheoretisch, hierarchisch, partitionierend oder optimierend sein. Inzwischen gibt es im Clustering eine große Vielfalt an Methoden, die eingesetzt werden können. Das hängt aber vom Anwendungsfall und der Größe der Datenmenge ab.\\[4pt]
-Was man aber dabei beachten soll, dass die Algorithmen verschiedene Ergebnisse liefern können. Was öfter der Fall ist. 
+Was man aber dabei beachten soll, dass die Algorithmen verschiedene Ergebnisse liefern können \cite{onlinequelle1}. 
 
 \section{K-Means als Beispiel für partitionierende Verfahren}
 Im partitionierenden Verfahren wird ein Clustering mit k Cluster mit minimalen Kosten gesucht. Und bei K-Means wie der Name bereits sagt, sucht das Algorithmus für jeden Cluster einen zentralen Punkt, bei dem die Varianz zu allen umliegenden Punkten möglichst gering ist.\\[4pt]
-Das Ganze passiert in einem iterativen Verfahren wie folgendes:
+Das Ganze passiert in einem iterativen Verfahren wie folgendes \cite{onlinequelle1}:
 \begin{itemize}
 	\item Initialisierung: Zufällige Auswahl von K Zentren. 
 	\item Zuweisung aller Datenpunkten zum nächstliegenden Zentrum, gemessen an einer Distanzmetrik. Distanzmetrik berechnet hier die Ähnlichkeit. 
@@ -43,15 +46,15 @@ Das Ganze passiert in einem iterativen Verfahren wie folgendes:
 \end{itemize}
 
 \section{Ensemble Clustering}
-Im Zusammenhang mit maschinellem Lernen ist Ensemble im Allgemein definiert als ein maschinelles Lernsystem, das mit einer Reihe von parallel arbeitenden einzelnen Modellen konstruiert wird. Und die Ergebnisse von diesen Modellen werden mit einer Entscheideungsfusionsstratigie kombiniert, um einzige Lösung vom gegebenen Problem zu liefern.\\[4pt]
- Die Ensemble Methode war zuerst nur im Bereich des überwachten Lernens benutzt und betrachtet, aber aufgrund seiner erfolgreichen Applikationen in Klassifizierungsaufgaben wurde es versucht, die Ensemble Methode auf unüberwachtes Lernen anzuwenden. Insbesondere auf Clustering Probleme. Die Gründe dafür sind erstens, dass es kein vorhandenes Wissen über die zugrundeliegende Struktur. Zweitens es gibt keinen einzelnen Clustering-Algorithmus, der für verschiedene Probleme konsistent gute Leistungen erbringen kann.\\[4pt]
- Ensemble Clustering zielt darauf ab, mehrere Clusteringsmodelle zu kombinieren, um ein besseres Ergebnis als die einzelnen Clustering-Algorithmen. Dies ist in vielen Kontexten sehr nützlich: 
+Im Zusammenhang mit maschinellem Lernen ist Ensemble im Allgemein definiert als ein maschinelles Lernsystem, das mit einer Reihe von parallel arbeitenden einzelnen Modellen konstruiert wird. Und die Ergebnisse von diesen Modellen werden mit einer Entscheideungsfusionsstratigie kombiniert, um einzige Lösung für das gegebenen Problem zu liefern.\\[4pt]
+ Die Ensemble Methode war zuerst nur im Bereich des überwachten Lernens benutzt und betrachtet, aber aufgrund seiner erfolgreichen Applikationen in Klassifizierungsaufgaben wurde es versucht, die Ensemble Methode auf unüberwachtes Lernen anzuwenden \cite{alqurashi2019clustering}. Insbesondere auf Clustering Probleme. Die Gründe dafür sind erstens, dass es kein vorhandenes Wissen über die zugrundeliegende Struktur. Zweitens es gibt keinen einzelnen Clustering-Algorithmus, der für verschiedene Probleme konsistent gute Leistungen erbringen kann.\\[4pt]
+ Ensemble Clustering zielt darauf ab, mehrere Clusteringsmodelle zu kombinieren, um ein besseres Ergebnis als die einzelnen Clustering-Algorithmen. Dies ist in vielen Kontexten sehr nützlich \cite{strehl2002cluster}: 
 \begin{itemize}
 	\item Qualität und Robustheit  
 	\item Knowledge Reuse 
 	\item Distributed Computing     
 \end{itemize}
-Man kann jetzt Ensemble Clustering als Problem sehen und zwar wie folgendes:\\[4pt]
+Das Ensemble Clustering Problem lässt sich wie folgt beschreiben:\\[4pt]
 \textbf{Gegeben}: Mehrere Clusterings aus verschiedenen Algorithmen von derselben Datenmenge.\\[4pt]
 \textbf{Gesucht}: Ein kombiniertes Clustering, welches so viele Informationen wie möglich mit den gegebenen Clusterings teilt. 
 
@@ -68,42 +71,41 @@ $\lambda^{(2)}$ = $(C_{2}, C_{2}, C_{2}, C_{3}, C_{3}, C_{l}, C_{l})^{T}$ \\
 $\lambda^{(3)}$ = $(C_{l}, C_{l}, C_{2}, C_{2}, C_{3}, C_{3}, C_{3})^{T}$	\qquad
 $\lambda^{(4)}$ = $(C_{l}, C_{2}, ?, C_{l}, C_{2}, ?, ?)^{T}$ \\[4pt]
 $\lambda^{(1)}$ wird so gelesen: $x_1, x_2, x_3 \in C_{1}$ usw.\\
-Mit scharfem Sehen kann man erkennen, dass die Label Vektoren $\lambda^{(1)}$ und $\lambda^{(2)}$ logischerweise identisch sind. $\lambda^{(3)}$ liefert einen Unterschied von der Zugehörigkeit der Objekte $x_3$ und $x_5$. $\lambda^{(4)}$ weicht sich von der Anderen sehr ab, außerdem $\lambda^{(4)}$ enthält $missing$ $Data$.\\
-Gesucht ist jetzt wie vorher gesprochen ein kombiniertes Clustering, welches so viele Informationen wie möglich mit den vier gegebenen Clusterings teilt. Intuitiv, ein gutes kombiniertes Clustering in diesem Fall ist  $\lambda^{(1)}$ oder auch $\lambda^{(2)}$.
+Man kann erkennen, dass die Label Vektoren $\lambda^{(1)}$ und $\lambda^{(2)}$ logischerweise identisch sind. $\lambda^{(3)}$ liefert einen Unterschied von der Zugehörigkeit der Objekte $x_3$ und $x_5$. $\lambda^{(4)}$ weicht sich von der Anderen sehr ab, außerdem $\lambda^{(4)}$ enthält $missing$ $Data$ \cite{strehl2002cluster}.\\
+Gesucht ist jetzt ein kombiniertes Clustering, welches so viele Informationen wie möglich mit den vier gegebenen Clusterings teilt. Intuitiv, ein gutes kombiniertes Clustering in diesem Fall ist  $\lambda^{(1)}$ oder auch $\lambda^{(2)}$ .
 
 
 
 \subsection{Objektive Funktion für Ensemble Clustering}
-Gegeben nun $r$ Gruppierungen mit $\lambda^{(i)}$ ist die $i-te$ Gruppierung, welche $k^{i}$ Clusters hat. Eine $consensus$ Funktion ist wie folgendes definiert $\Gamma:\mathbb{N}^{n \times r} \rightarrow \mathbb{N}^{n}$.
+Gegeben nun $r$ Gruppierungen mit $\lambda^{(i)}$ ist die $i-te$ Gruppierung, welche $k^{i}$ Clusters hat. Eine $consensus$ Funktion ist wie folgt definiert $\Gamma:\mathbb{N}^{n \times r} \rightarrow \mathbb{N}^{n}$ \cite{strehl2002cluster}.
 \begin{equation} 
 \centerline{ $\Gamma$ : $\{\lambda^{i} \mid i \in {1, \ldots, r}\} \rightarrow \lambda$.}
 \end{equation}
-Wenn es grundsätzliche keine Informationen über die relative Bedeutung der einzelnen Gruppierungen gibt, dann ist eine sinnvolle Ziel für die $consensus$ Antwort, ein Clustering zu suchen, welches die meisten Informationen mit dem ursprünglichen \textbaht{Clusterings} teilt.  \\
+Wenn es grundsätzliche keine Informationen über die relative Bedeutung der einzelnen Gruppierungen gibt, dann ist eine sinnvolle Ziel für die $consensus$ Antwort, ein Clustering zu suchen, welches die meisten Informationen mit dem ursprünglichen \textbf{Clusterings} teilt.  \\
 Im Folgenden brauchen wir zwei Definitionen und zwar von Entropie und gegenseitige Information.\\
 \textbf{Entropie}: ist die minimale Beschreibungskomplexität einer Zufallsvariablen.\\
 \textbf{Gegenseitige Information}: st die Kommunikationsrate im Gegenwart von Rauschen.\\
 Gegenseitige Information, die ein symmetrisches Maß zur Quantifizierung der statistischen Informationen zwischen zwei Distributionen ist, liefert einen Hinweis auf die gemeinsame Informationen zwischen einem Paar von $Clusterings$. Seien $X$ und $Y$ zwei Zufallsvariablen beschrieben durch das Clustering $\lambda^{(a)}$ und $\lambda^{(b)}$ mit $k^{(a)}$ und $k^{(b)}$ Clusters. $I(X,Y)$ beschreibt die gegenseitige Information zwischen $X$ und $Y$, und $H(X)$ beschreibt die Entropie von $X$.\\
-Zur Vereinfachung der Interpretation und Vergleichbarkeit ist eine normalisierte Version von $I(X,Y)$, welche zwischen 0 und 1 liegt, gewünscht. Dies folgt zur normalisierten gegenseitigen Information NMI:
+Zur Vereinfachung der Interpretation und Vergleichbarkeit ist eine normalisierte Version von $I(X,Y)$, welche zwischen 0 und 1 liegt, gewünscht. Dies folgt zur normalisierten gegenseitigen Information NMI \cite{strehl2002cluster}:
 \begin{equation} 
 \centerline{$NMI(X,Y) = \frac{I(X,Y)}{\sqrt{H(X)H(Y)}}.$}
 \end{equation}
 Da $I(X,Y)$ eine Metrik ist, also es gilt $I(X,Y) \leq min(H(X), H(Y))$, ist dann $NMI(X,X)$ = 1 genauso wie gewünscht.\\
-Die zweite Gleichung kann durch von $Clusterings$ bereitgestellten Strichproben geschätzt werden. Sei $n_{h}^{(a)}$ die Anzahl von Objekten in Cluster $C_{h}$ anhand das Clustering $\lambda^{(a)}$ und $n_{l}^{(b)}$ die Anzahl von Objekten in Cluster $C_{l}$ anhand das Clustering $\lambda^{(b)}$. Sei $n_{h,l}$ die Anzahl der gemeinsamen Objekten zwischen Cluster $h$ anhand $\lambda^{(a)}$ und Cluster $l$ anhand $\lambda^{(b)}$. Dann ist:
+Die zweite Gleichung kann durch von $Clusterings$ bereitgestellten Strichproben geschätzt werden. Sei $n_{h}^{(a)}$ die Anzahl von Objekten in Cluster $C_{h}$ anhand das Clustering $\lambda^{(a)}$ und $n_{l}^{(b)}$ die Anzahl von Objekten in Cluster $C_{l}$ anhand das Clustering $\lambda^{(b)}$. Sei $n_{h,l}$ die Anzahl der gemeinsamen Objekten zwischen Cluster $h$ anhand $\lambda^{(a)}$ und Cluster $l$ anhand $\lambda^{(b)}$. Dann ist \cite{strehl2002cluster}:
 \begin{equation}
 \centerline{$\phi^{(NMI)}(\lambda^{(a)}, \lambda^{(b)}) = \frac{\sum_{h=1}^{k^{(a)}} \sum_{l=1}^{k^{(b)}}n_{h,l} \cdot \log \biggl(\frac{n \cdot n_{h,l}}{n_{h}^{(a)} \cdot n_{l}^{(b)}} \biggr) }{\sqrt{\biggl(\sum_{h=1}^{k^{(a)}} n_{h}^{(a)} \log \frac{n_{h}^{(a)}}{n} \biggr)
 			\biggl(\sum_{l=1}^{k^{(b)}} n_{l}^{(b)} \cdot \log \frac{n_{l}^{(b)}}{n} \biggr)}}.$}
 \end{equation}
-Von Gleichung $(3)$ wird einen Maß zwischen einer Menge $\Lambda$ und einem einzelnen Clustering $\hat{\lambda}$  als die durchschnittliche normalisierte gegenseitige Information definiert (ANMI): 
+Von Gleichung $(3)$ wird einen Maß zwischen einer Menge $\Lambda$ und einem einzelnen Clustering $\hat{\lambda}$  als die durchschnittliche normalisierte gegenseitige Information definiert (ANMI) \cite{strehl2002cluster}: 
 \begin{equation} 
 	\centerline{$\phi^{(ANMI)}(\Lambda, \hat{\lambda}) = \frac{1}{r} \sum_{q=1}^{r} \phi^{(NMI)}(\hat{\lambda}, \lambda^{(q)}).$}
 \end{equation}
-Das optimale kombinierte Clustering $\lambda^{(k-opt)}$ ist das Clustering mit der maximalen durchschnittlichen gegenseitigen Information, wobei $k$ ist die Anzahl von $consensus$ Clusters. In anderen Worten, $\phi^{(ANMI)}$ ist unsere objektive Funktion und $\lambda^{(k-opt)}$ ist:
-
+Das optimale kombinierte Clustering $\lambda^{(k-opt)}$ ist das Clustering mit der maximalen durchschnittlichen gegenseitigen Information, wobei $k$ ist die Anzahl von $consensus$ Clusters. In anderen Worten, $\phi^{(ANMI)}$ ist unsere objektive Funktion und $\lambda^{(k-opt)}$ ist \cite{strehl2002cluster}:
 \begin{equation} 
 	\centerline{$\lambda^{(k-opt)} = \underset{\hat{\lambda}}{\arg\max} \sum_{q=1}^{r} \phi^{(NMI)}(\hat{\lambda}, \lambda^{(q)}),$}
 \end{equation}
 wobei $\hat{\lambda}$ durch alle mögliche $k-Partitionierungen$ läuft. \\  
-In unserem Beispiel enthält das Clustering $\lambda^{(4)}$ $missing Data$. Für solche Fälle kann das objektive $consensus$ Clustering aus der Gleichung $(5)$ durch Berechnung eines gewichteten Durchschnitt von der gegenseitigen Information mit allen bekannten Clusters verallgemeinert werden.   
+In unserem Beispiel enthält das Clustering $\lambda^{(4)}$ $missing Data$. Für solche Fälle kann das objektive $consensus$ Clustering aus der Gleichung $(5)$ durch Berechnung eines gewichteten Durchschnitt von der gegenseitigen Information mit allen bekannten Clusters verallgemeinert werden \cite{strehl2002cluster}.   
 \begin{equation} 
 	\centerline{$\lambda^{(k-opt)} = \underset{\hat{\lambda}}{\arg\max} \sum_{q=1}^{r} \lvert \Upsilon^{(q)} \lvert \phi^{(NMI)}(\hat{\lambda}_{\Upsilon^{(q)}}, \hat{\lambda}_{\Upsilon^{(q)}}^{(q)}).$}
 \end{equation}
@@ -113,44 +115,62 @@ Wobei $\Upsilon^{(i)}$ ist eine Menge von Indizes der Objekten mit bekannten Clu
 
 \section{Effiziente consensus Funktion}
 In diesem Abschnitt werden einige Verfahren zur Lösung des Ensemble Clustering Problems vorgestellt. 
-Es gibt zwei Arten von $consensus$ Funktionen, eine basiert auf die Median Partitionierung Approximation und die zweite basiert auf das gemeinsame Auftreten von Objekten, die sogenannte $objects$ $co-occurrence$ $approach$.\\
-Eine Einordnung von der wichtigsten  $consensus$ Funktionen werden in $Abbildung 1$ vorgestellt. Aber wir werden hier uns nur auf die $Graph$ $and$ $hypergraph$ $based$ $methods$ fokussieren.
+Es gibt zwei Arten von $consensus$ Funktionen, eine basiert auf die Median Partitionierung Approximation und die zweite basiert auf das gemeinsame Auftreten von Objekten, die sogenannte $objects$ $co-occurrence$ $approach$ \cite{vega2011survey}.\\
+Eine Einordnung von der wichtigsten  $consensus$ Funktionen werden in $Abbildung 1$ vorgestellt. Aber wir werden uns hier nur auf die $Graph$ $and$ $hypergraph$ $based$ $methods$ fokussieren.
 \begin{figure}[t]
-	\includegraphics[width=10cm, height=10cm]{Abbildung1}
+	\begin{center}
+		\includegraphics[width=10cm, height=10cm]{Abbildung1}
+		\caption{Schematische Darstellung der wichtigsten Konsensfunktionstechniken. Konsensfunktionen, die auf dem Objekt
+			objects co-occurrence approach basieren, sind durch ein Rechteck (links) dargestellt, die auf der Median Partitionierung Approximation werden durch ein abgerundetes Rechteck dargestellt (rechts) \cite{vega2011survey}.}
+	\end{center}	
 \end{figure}
+
+
 \subsection{Graph and hypergraph based methods}
 Diese Art von Clustering-Ensemble-Methoden transformieren das Kombinationsproblem zu einem Graph bzw. Hypergraph-Partitionierungsproblem. Der Unterschied zwischen den Methoden liegt auf die Art und Weise, wie der (Hyper-)Graph aus der Menge der Clusterings aufgebaut wird, und wie Kantenschnitt von der Graph definiert ist, um die $consensus$ Partitionierung zu erhalten.\\
-Es gibt vier Methoden für diese Art von Clustering und zwar: 
+Hier werden vier Methoden für diese Art von Clustering vorgestellt und zwar: 
 \begin{itemize}
-	\item Cluster-based Similarity Partitioning Algorithm (CSPA): Hier wird aus dem Hypergraph eine $n \times n$ Ähnlichkeitsmatrix (die Co-Assoziationsmatrix) konstruiert. Dies kann als eine Adjazenzmatrix eines zusammenhängenden Graphen angesehen werden, wobei die Knoten die Elemente der Datenmenge $X$ sind und die kanten zwischen zwei Objekten ein zugeordnetes Gewicht hat. Das Gewicht entspricht, wie oft sich die Objekte im selben Cluster befinden. Danach wird das Graph-Partitionierungsalgorithmus MEITS verwendet, um die $consensus$ Partitionierung zu erhalten.\\[4pt]
+	\item Cluster-based Similarity Partitioning Algorithm (CSPA): Hier wird aus dem Hypergraph eine $n \times n$ Ähnlichkeitsmatrix (die Co-Assoziationsmatrix) konstruiert. Dies kann als eine Adjazenzmatrix eines zusammenhängenden Graphen angesehen werden, wobei die Knoten die Elemente der Datenmenge $X$ sind und die kanten zwischen zwei Objekten ein zugeordnetes Gewicht hat. Das Gewicht entspricht, wie oft sich die Objekte im selben Cluster befinden. Danach wird das Graph-Partitionierungsalgorithmus MEITS verwendet, um die $consensus$ Partitionierung zu erhalten \cite{vega2011survey}.\\[4pt]
 	
-	\item HyperGraphs Partitioning Algorithm (HGPA): Hier wird den Hypergraphen direkt partitioniert, indem die minimale Anzahl  von Hyperkanten eliminiert wird. Außerdem wird es davon ausgegangen, dass alle Hyperkanten das gleiche Gewicht haben. Und die Kantenelimination \textbf{Guten Ausdruck hier finden von Vega 2011}. Füe die Implementierung dieser Methode wird die Hypergraphs-Partitionierungspaket HMETIS verwendet.\\[4pt]
+	\item HyperGraphs Partitioning Algorithm (HGPA): Hier wird den Hypergraphen direkt partitioniert, indem die minimale Anzahl  von Hyperkanten eliminiert wird. Außerdem wird es davon ausgegangen, dass alle Hyperkanten das gleiche Gewicht haben. Und es wird nach der kleinstmöglichen Anzahl von Hyperkanten gesucht, die den Hypergraphen in $k$ zusammenhängende Komponenten von
+	annähernd gleicher Dimension unterteilen. Für die Implementierung dieser Methode wird die Hypergraphs-Partitionierungspaket $HMETIS$ verwendet \cite{vega2011survey}.\\[4pt]
 	
-	\item  Meta-CLustering Algorithm (MCLA):Vor allem ist hier die Ähnlichkeit zwischen zwei Clusters $C_{i}$ und $C_{j}$ wird anhand des Jaccar-Indexes bezüglich der Menge der Objekte definiert \textbf{Bessere Formulierung Finden}. Somit ist die Ähnlichkeitsmatrix zwischen Clusters gebildet, welche die Adjazenzmatrix des Graphen darstellt. Aber unter der Berücksichtigung, dass die Clusters als Knoten sind und der Kante zwischen zwei Knoten gewichtet ist, wobei das Gewicht die Ähnlichkeit zwischen Clusters entspricht. Danach wird dieser Graph mit dem METIS partitioniert und das erhaltene Cluster wird als Meta-Cluster bezeichnet.\\
-	Schließlich, um die eindeutige Partitionierung zu finden, wird die Anzahl jedes Objektes im Meta-Cluster berechnet und jeder Objekt wird zu einem Meta-Cluster geordnet, in dem er öfter aufgetreten ist. Dieses Algorithmus hat einen Aufwand von $O(n^2)$.\\[4pt]
+	\item  Meta-CLustering Algorithm (MCLA):Vor allem wird hier die Ähnlichkeit zwischen zwei Clusters $C_{i}$ und $C_{j}$ anhand des $Jaccard-Indexes$ bezüglich der Menge der Objekte definiert. Somit ist die Ähnlichkeitsmatrix zwischen Clusters gebildet, welche die Adjazenzmatrix des Graphen darstellt. Aber unter der Berücksichtigung, dass die Clusters als Knoten sind und der Kante zwischen zwei Knoten gewichtet ist, wobei das Gewicht die Ähnlichkeit zwischen Clusters entspricht. Danach wird dieser Graph mit dem METIS partitioniert und das erhaltene Cluster wird als Meta-Cluster bezeichnet.\\
+	Schließlich, um die eindeutige Partitionierung zu finden, wird die Anzahl jedes Objektes im Meta-Cluster berechnet und jeder Objekt wird zu einem Meta-Cluster geordnet, in dem er öfter aufgetreten ist \cite{vega2011survey}.\\[4pt]
 	      
-	\item Hybrid Bipartite Graph Formulation (HBGF): In diesem letzten Algorithmus werden die Clusters und Objekten zusammen in derselben Graph modelliert. Bei dieser Methode wird der bipartite-Graph so gebildet, dass es keine Kanten zwischen Knoten gibt, falls sie beide entweder Objekte oder Clusters sind. Also es gibt nur Kanten zwischen zwei Knoten, falls ein Knoten einem Cluster repräsentiert und der Zweite einem Objekt, der zu diesem Cluster gehört, repräsentiert. Die $consensus$ Partitionierung wird unter der Verwendung von METIS oder $Spectral-Clustering$ erhalten.  
+	\item Hybrid Bipartite Graph Formulation (HBGF): In diesem letzten Algorithmus werden die Clusters und Objekten zusammen in derselben Graph modelliert. Bei dieser Methode wird der bipartite-Graph so gebildet, dass es keine Kanten zwischen Knoten gibt, falls sie beide entweder Objekte oder Clusters sind. Also es gibt nur Kanten zwischen zwei Knoten, falls ein Knoten einem Cluster repräsentiert und der Zweite einem Objekt, der zu diesem Cluster gehört, repräsentiert. Die $consensus$ Partitionierung wird unter der Verwendung von METIS oder $Spectral-Clustering$ erhalten \cite{vega2011survey}.  
 \end{itemize}  
 
 
 \subsection{Darstellung von Gruppen von Clusterings als Hypergraph}
 Wie wir schon im vorherigen Abschnitt gesehen haben, die Clusterings sollten zu einem Hypergraph umgewandelt werden, damit eine der vier Methoden verwendet werden kann. Und das ist genau unser Ziel in diesem Abschnitt.\\
 Ein \textbf{Hypergraph} besteht aus Knoten und Hyperkanten. Eine Kante in einem regulären Graph verbindet $genau$ zwei Knoten. Eine \textbf{Hyperkante} ist eine Verallgemeinerung einer Kante, da sie jede Menge von Knoten verbinden kann.\\[4pt]
-Für jeden Label Vektor $(Clustering)$ $\lambda^{(q)} \in \mathbb{N}^{n}$ konstruieren wir die binäre Zugehörigkeitsindikatormatrix  $H^{(q)} \in \mathbb{N}^{n \times k^{(q)}}$, wobei jeder Cluster als Hyperkante $(Spalte)$ dargestellt wird (Siehe Tabelle 1). Alle Einträge einer Zeile in der binären Zugehörigkeitsindikatormatrix $H^{(q)}$ werden zu 1 addiert, falls die Zeile mit einem Objekt, welches sein Cluster bekannt ist, übereinstimmt. und Zeilen für Objekte mit unbekanntem Cluster sind mit Null ausgefüllt.\\
-Die Blockmatrix $H = (H^{(1)} \ldots H^{(r)})$ definiert die Adjazenzmatrix eines Hypergraphen mit $n$ Knoten und $\sum_{q=1}^{r} k^{(q)}$ Hyperkanten. Jeder Spaltenvektor $\boldsymbol{h_{a}}$ spezifiziert eine Hyperkante $h_{a}$, wobei 1 anzeigt, dass der Knoten mit der entsprechenden Zeile zu der Hyperkante gehört und 0 gibt an, dass dies nicht der Fall ist. Somit haben wir jeder Cluster zu einem Hyperkante und die Menge von Clusterings zu einem Hypergraph abgebildet.\\ 
+Für jeden Label Vektor $(Clustering)$ $\lambda^{(q)} \in \mathbb{N}^{n}$ konstruieren wir die binäre Zugehörigkeitsindikatormatrix  $H^{(q)} \in \mathbb{N}^{n \times k^{(q)}}$, wobei jeder Cluster als Hyperkante $(Spalte)$ dargestellt wird (Siehe Abb.2). Alle Einträge einer Zeile in der binären Zugehörigkeitsindikatormatrix $H^{(q)}$ werden zu 1 addiert, falls die Zeile mit einem Objekt, welches sein Cluster bekannt ist, übereinstimmt. und Zeilen für Objekte mit unbekanntem Cluster sind mit Null ausgefüllt.\\
+Die Blockmatrix $H = (H^{(1)} \ldots H^{(r)})$ definiert die Adjazenzmatrix eines Hypergraphen mit $n$ Knoten und $\sum_{q=1}^{r} k^{(q)}$ Hyperkanten. Jeder Spaltenvektor $\boldsymbol{h_{a}}$ spezifiziert eine Hyperkante $h_{a}$, wobei 1 anzeigt, dass der Knoten mit der entsprechenden Zeile zu der Hyperkante gehört und 0 gibt an, dass dies nicht der Fall ist. Somit haben wir jeder Cluster zu einem Hyperkante und die Menge von Clusterings zu einem Hypergraph abgebildet \cite{strehl2002cluster}.\\ 
 \begin{figure}[t]
-	\includegraphics[width=\textwidth]{tablle1}
+	\begin{center}
+		\includegraphics[width=\textwidth]{tablle1}
+		\caption{Beispiel für das Cluster-Ensemble-Problem mit $r = 4$, $k^{(1, \ldots, 3)} = 3$ und $k^{(4)} = 2$: Original-Label-Vektoren (links) und äquivalente Hypergraphendarstellung mit 11 Hy-
+			peredges (rechts). Jeder Cluster wird in eine Hyperedge umgewandelt \cite{strehl2002cluster}.}
+	\end{center}	
 \end{figure}
+
+
 \section{Cluster-based Similarity Partitioning Algorithm}
-In diesem Abschnitt wird das $Cluster-based$ $Similarity$ $Partitioning$ $Algorithm$ im Details geklärt. Wie bereit gesprochen, in diesem Algorithmus sollte zuerst eine Ähnlichkeitmatrix werden. Basieren auf einer grob aufgelösten Suchtweise haben zwei Objekte eine Ähnlichkeit von $1$, falls sie im gleichen Cluster sind und eine Ähnlichkeit von $0$ ansonsten. Somit kann man eine $n \times n$ binäre Ähnlichkeitmatrix für jedes Clustering einfach erstellen. \\
+In diesem Abschnitt wird das $Cluster-based$ $Similarity$ $Partitioning$ $Algorithm$ im Details geklärt. In diesem Algorithmus sollte zuerst eine Ähnlichkeitmatrix konstruiert werden. Basieren auf einer grob aufgelösten Suchtweise haben zwei Objekte eine Ähnlichkeit von $1$, falls sie im gleichen Cluster sind und eine Ähnlichkeit von $0$ ansonsten. Somit kann man eine $n \times n$ binäre Ähnlichkeitmatrix für jedes Clustering einfach erstellen. \\
 Der eingangsbezogene Durchschnitt von $r$ solchen Matrizen, die die $r$ Gruppen darstellen, ergibt eine Gesamtähnlichkeitsmatrix S mit einer feineren Auflösung. Einträge von S bezeichnen den Anteil der Gruppierungen, in denen sich zwei Objekte im selben Cluster befinden,
-und können mit einer einzigen dünnbesetzten Matrixmultiplikation $(sparse- matrix)$ berechnet werden S = $\frac{1}{r} H H^{T}$. Abbildung 2 veranschaulicht die Erstellung der clusterbasierten Ähnlichkeitsmatrix für das in Tabelle 1 angegebene Beispiel. Nun können wir die Ähnlichkeitsmatrix verwenden, um die Objekte mit einem beliebigen sinnvollen
-Clustering-Algorithmus auf der Basis von Ähnlichkeit. In unserem Fall entscheiden wir uns für eine Partitionierung des induzierten Ähnlichkeitsgraphen (Knote = Objekt, Kantengewicht = Ähnlichkeit) mit METIS 
+und können mit einer einzigen dünnbesetzten Matrixmultiplikation $(sparse- matrix)$ berechnet werden S = $\frac{1}{r} H H^{T}$. Abb.3 veranschaulicht die Erstellung der clusterbasierten Ähnlichkeitsmatrix für das in Abb.2 angegebene Beispiel. Nun können wir die Ähnlichkeitsmatrix verwenden, um die Objekte mit einem beliebigen sinnvollen
+Clustering-Algorithmus auf der Basis von Ähnlichkeit zu $reclustern$. In unserem Fall entscheiden wir uns für eine Partitionierung des induzierten Ähnlichkeitsgraphen (Knote = Objekt, Kantengewicht = Ähnlichkeit) mit METIS 
 wegen seiner robusten und skalierbaren Eigenschaften.\\
 CSPA ist die einfachste und naheliegendste Heuristik, aber ihr Rechen- und Speicheraufwand
-Komplexität sind beide quadratisch in $O(n^2)$.
+Komplexität sind beide quadratisch in $O(n^2)$ \cite{strehl2002cluster}.
 \begin{figure}[t]
-	\includegraphics[width=\textwidth]{Abbildung2}
+	\begin{center}
+		\includegraphics[width=\textwidth]{Abbildung2}
+		\caption{Veranschaulichung von (CSPA) für das in Abb.2 angegebene Cluster-Ensemble-Beispielproblem. Jedes Clustering besitzt eine
+			Ähnlichkeitsmatrix. Die Matrixeinträge werden durch Dunkelheit proportional zur Ähnlichkeit dargestellt.
+			Ihr Durchschnitt wird dann verwendet, um die Objekte neu zu clustern und einen Konsens zu erhalten \cite{strehl2002cluster}.}
+	\end{center}
 \end{figure}
 
 
@@ -171,7 +191,7 @@ Komplexität sind beide quadratisch in $O(n^2)$.
 \subsection{Mehrstufige Graphenbisektion}
 Der Graph $G$ kann mit einem mehrstufigen Algorithmus halbiert werden. Die Grundstruktur eines mehrstufigen Algorithmus ist sehr einfach. Der
 Graphen $G$ wird zunächst auf einige hundert Knoten runter vergröbert, dann wird eine Bisektion dieses viel kleineren Graphen berechnet und diese Partition dann auf den ursprünglichen Graphen zurückprojiziert Graph (feinerer Graph). Bei jedem Schritt der Entgröberung des Graphen wird die Partition weiter verfeinert. Solche Verfeinerungen verringern in der Regel den Kantenschnit ($edge-cut$).\\
-Also Ein mehrstufiger Graphbisektionsalgorithmus funktioniert wie folgt: betrachte einen gewichteten Graphen $G_0 = (V_0, E_0)$ mit Gewichten sowohl aus Knoten als auch auf Kanten. Dieser Algorithmus besteht aus den folgenden frei Phasen:
+Also Ein mehrstufiger Graphbisektionsalgorithmus funktioniert wie folgt: betrachte einen gewichteten Graphen $G_0 = (V_0, E_0)$ mit Gewichten sowohl aus Knoten als auch auf Kanten. Dieser Algorithmus besteht aus den folgenden frei Phasen \cite{karypis1998fast}:
 \begin{itemize}
 	\item Vergröberungsphase $Coarsening$: Der Graph $G_0$ wird in ein Folge von kleineren Graphen $G_1, G_2, \ldots, G_m$ umgewandelt, so dass $\lvert V_0 \lvert > \lvert V_1 \lvert > \ldots > \lvert V_m \lvert.$
 	\item Partitionierungsphase: Eine 2-fache-Partition $P_m$ des Graphen $G_m = (V_m, E_m)$ wird berechnet, die $V_m$ in zwei Teile unterteilt, die jeweils die Hälfte der Knoten von $G_0$ enthält. 
@@ -218,7 +238,7 @@ Matchings für die Vergröberung.
 Die zweite Phase eines Multilevel-Algorithmus berechnet
 eine qualitativ hochwertige Bisektion (d. h. einen kleinen Kantenschnitt) $P_m$ des groben Graphen $G_m = (V_m, E_m)$,
 so dass jeder Teil ungefähr die Hälfte des Knotengewichts des ursprünglichen Graphen enthält. Da bei der Vergröberung die Gewichte der Knoten und Kanten des vergröberten Graphen so eingestellt ist, dass sie die Gewichte der Knoten und Kanten des feineren Graphen widerspiegeln, enthält $G_m$ Informationen, um auf intelligente Weise die balancierte Partitionierung und die kleinen Kantenschnitt-Anforderungen durchzusetzen.\\
-Eine Partition von Gm kann mit verschiedenen Algorithmen erhalten werden, wie z.B:
+Eine Partition von $G_m$ kann mit verschiedenen Algorithmen erhalten werden, wie z.B \cite{karypis1998fast}:
 \begin{itemize}
 	\item spektrale Bisektion $SB$
 	\item geometrische Bisektion (wenn Koordinaten verfügbar sind)
@@ -238,15 +258,7 @@ Während der Vergröberungsphase wird die Partition $P_m$ des vergröberten Grap
 
 
 
-
-
-
-
-
-
-
-
-
+\printbibliography
 
 
 \end{document}

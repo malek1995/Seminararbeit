@@ -1,0 +1,183 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{alqurashi2019clustering}{article}{}
+      \name{author}{2}{}{%
+        {{hash=940fc74b8870d404267f7b3e7c313043}{%
+           family={Alqurashi},
+           familyi={A\bibinitperiod},
+           given={Tahani},
+           giveni={T\bibinitperiod}}}%
+        {{hash=40962e0575fd9f16cd4719726685e647}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenjia},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{0e8d9c379fa191ea1785e72e37c95c17}
+      \strng{fullhash}{0e8d9c379fa191ea1785e72e37c95c17}
+      \strng{bibnamehash}{0e8d9c379fa191ea1785e72e37c95c17}
+      \strng{authorbibnamehash}{0e8d9c379fa191ea1785e72e37c95c17}
+      \strng{authornamehash}{0e8d9c379fa191ea1785e72e37c95c17}
+      \strng{authorfullhash}{0e8d9c379fa191ea1785e72e37c95c17}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Machine Learning and Cybernetics}
+      \field{number}{6}
+      \field{title}{Clustering ensemble method}
+      \field{volume}{10}
+      \field{year}{2019}
+      \field{pages}{1227\bibrangedash 1246}
+      \range{pages}{20}
+    \endentry
+    \entry{karypis1998fast}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3db7df6401b206bb040d6735adbe81e2}{%
+           family={Karypis},
+           familyi={K\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=efb90d78e35ff61d3bc639f5c6f3d822}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Vipin},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{78d3ffe775563bd509dfd1b2150dab33}
+      \strng{fullhash}{78d3ffe775563bd509dfd1b2150dab33}
+      \strng{bibnamehash}{78d3ffe775563bd509dfd1b2150dab33}
+      \strng{authorbibnamehash}{78d3ffe775563bd509dfd1b2150dab33}
+      \strng{authornamehash}{78d3ffe775563bd509dfd1b2150dab33}
+      \strng{authorfullhash}{78d3ffe775563bd509dfd1b2150dab33}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Journal on scientific Computing}
+      \field{number}{1}
+      \field{title}{A fast and high quality multilevel scheme for partitioning irregular graphs}
+      \field{volume}{20}
+      \field{year}{1998}
+      \field{pages}{359\bibrangedash 392}
+      \range{pages}{34}
+    \endentry
+    \entry{onlinequelle1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b3cb1eefd33bb04b2a4197dffc445da3}{%
+           family={Kilian},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3cb1eefd33bb04b2a4197dffc445da3}
+      \strng{fullhash}{b3cb1eefd33bb04b2a4197dffc445da3}
+      \strng{bibnamehash}{b3cb1eefd33bb04b2a4197dffc445da3}
+      \strng{authorbibnamehash}{b3cb1eefd33bb04b2a4197dffc445da3}
+      \strng{authornamehash}{b3cb1eefd33bb04b2a4197dffc445da3}
+      \strng{authorfullhash}{b3cb1eefd33bb04b2a4197dffc445da3}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Der Clustering Guide: Definition, Methoden und Beispiele}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.kobold.ai/clustering-guide/
+      \endverb
+      \verb{url}
+      \verb https://www.kobold.ai/clustering-guide/
+      \endverb
+    \endentry
+    \entry{strehl2002cluster}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4ca3387e2a8e1a54c2ccb98ead3bc1db}{%
+           family={Strehl},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a42c5ff0154e1a6dbc0fb496130986db}{%
+           family={Ghosh},
+           familyi={G\bibinitperiod},
+           given={Joydeep},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb625690227fe35475c0ef61316c6244}
+      \strng{fullhash}{cb625690227fe35475c0ef61316c6244}
+      \strng{bibnamehash}{cb625690227fe35475c0ef61316c6244}
+      \strng{authorbibnamehash}{cb625690227fe35475c0ef61316c6244}
+      \strng{authornamehash}{cb625690227fe35475c0ef61316c6244}
+      \strng{authorfullhash}{cb625690227fe35475c0ef61316c6244}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of machine learning research}
+      \field{number}{Dec}
+      \field{title}{Cluster ensembles---a knowledge reuse framework for combining multiple partitions}
+      \field{volume}{3}
+      \field{year}{2002}
+      \field{pages}{583\bibrangedash 617}
+      \range{pages}{35}
+    \endentry
+    \entry{vega2011survey}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1129dea4f4ba71b5537b2cb44e826cb4}{%
+           family={Vega-Pons},
+           familyi={V\bibinithyphendelim P\bibinitperiod},
+           given={Sandro},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3daebb49359ec025ff793c4dc11d5016}{%
+           family={Ruiz-Shulcloper},
+           familyi={R\bibinithyphendelim S\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{c0639d5457a2c08e29e14e7bdb2320c2}
+      \strng{fullhash}{c0639d5457a2c08e29e14e7bdb2320c2}
+      \strng{bibnamehash}{c0639d5457a2c08e29e14e7bdb2320c2}
+      \strng{authorbibnamehash}{c0639d5457a2c08e29e14e7bdb2320c2}
+      \strng{authornamehash}{c0639d5457a2c08e29e14e7bdb2320c2}
+      \strng{authorfullhash}{c0639d5457a2c08e29e14e7bdb2320c2}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Pattern Recognition and Artificial Intelligence}
+      \field{number}{03}
+      \field{title}{A survey of clustering ensemble algorithms}
+      \field{volume}{25}
+      \field{year}{2011}
+      \field{pages}{337\bibrangedash 372}
+      \range{pages}{36}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
