@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.25)  8 JUN 2022 02:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.25)  2 JUL 2022 22:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,7 +966,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/Malek/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-[3]
+Underfull \vbox (badness 2103) has occurred while \output is active []
+
+ [3]
 <./images//Abbildung1.png, id=26, 591.71063pt x 727.96968pt>
 File: ./images//Abbildung1.png Graphic file (type png)
 <use ./images//Abbildung1.png>
@@ -979,28 +981,14 @@ sus$ \T1/cmr/m/n/10 Funk-tio-nen wer-den in $\OML/cmm/m/it/10 Abbildung\OT1/cmr
 /m/n/10 1$
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--137
-
- []
-
-[5 <./images//Abbildung1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
-
- []
-
+[4] [5 <./images//Abbildung1.png>]
 <./images//tablle1.png, id=41, 1019.30812pt x 399.74344pt>
 File: ./images//tablle1.png Graphic file (type png)
 <use ./images//tablle1.png>
 Package pdftex.def Info: ./images//tablle1.png  used on input line 152.
 (pdftex.def)             Requested size: 347.12354pt x 136.13054pt.
-[6]
-<./images//Abbildung2.png, id=45, 702.37407pt x 160.34906pt>
+ [6]
+<./images//Abbildung2.png, id=47, 702.37407pt x 160.34906pt>
 File: ./images//Abbildung2.png Graphic file (type png)
 <use ./images//Abbildung2.png>
 Package pdftex.def Info: ./images//Abbildung2.png  used on input line 169.
@@ -1017,54 +1005,58 @@ Overfull \hbox (4.92809pt too wide) in paragraph at lines 160--175
 sy/m/n/10 ^^@ \OML/cmm/m/it/10 based$ $Similarity$ $Partitioning$ $Algorithm$
  []
 
-[7 <./images//tablle1.png>]
-Overfull \hbox (9.0157pt too wide) in paragraph at lines 197--198
+
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+ [7 <./images//tablle1.png>]
+Overfull \hbox (9.0157pt too wide) in paragraph at lines 195--196
 []\T1/cmr/m/n/10 Partitionierungsphase: Ei-ne 2-fache-Partition $\OML/cmm/m/it/
 10 P[]$ \T1/cmr/m/n/10 des Gra-phen $\OML/cmm/m/it/10 G[] \OT1/cmr/m/n/10 = (\O
 ML/cmm/m/it/10 V[]; E[]\OT1/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (27.82536pt too wide) in paragraph at lines 198--199
+Overfull \hbox (27.82536pt too wide) in paragraph at lines 196--197
 \T1/cmr/m/n/10 zu-rück-pro-ji-ziert, in-dem man durch die Zwi-schen-par-ti-tio-
 nen $\OML/cmm/m/it/10 P[]; P[]; [] ; P[]; P[]$
  []
 
-[8 <./images//Abbildung2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
+Overfull \hbox (6.12964pt too wide) in paragraph at lines 199--208
+\T1/cmr/m/n/10 Der nächs-te grö-be-re Graph $\OML/cmm/m/it/10 G[]$ \T1/cmr/m/n/
+10 wird al-so aus $\OML/cmm/m/it/10 G[]$ \T1/cmr/m/n/10 kon-stru-iert, in-dem e
+in $\OML/cmm/m/it/10 Matching$
  []
 
-[9]
-Overfull \hbox (17.0pt too wide) detected at line 228
+[8 <./images//Abbildung2.png>]
+Overfull \hbox (17.0pt too wide) detected at line 217
 [][]
  []
 
-[10]
+[9] [10]
+Overfull \hbox (17.0pt too wide) detected at line 278
+[][]
+ []
+
+[11]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-64.
+87.
  (C:\Users\Malek\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-[11] (seminararbeit.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-
+[12] (seminararbeit.aux)
 Package logreq Info: Writing requests to 'seminararbeit.run.xml'.
 \openout1 = `seminararbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22416 strings out of 478614
- 449731 string characters out of 2843122
- 1159477 words of memory out of 3000000
- 40209 multiletter control sequences out of 15000+600000
+ 22424 strings out of 478614
+ 450075 string characters out of 2843122
+ 1158633 words of memory out of 3000000
+ 40217 multiletter control sequences out of 15000+600000
  484652 words of font info for 68 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 100i,9n,104p,751b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 100i,9n,104p,748b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Malek\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1000.pk> <C:\Users\Malek\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\eccc1000.pk> <C:\Users\Malek\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -1096,9 +1088,9 @@ ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Malek/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Malek/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Malek/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on seminararbeit.pdf (11 pages, 487718 bytes).
+Output written on seminararbeit.pdf (12 pages, 495374 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
+ 508 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

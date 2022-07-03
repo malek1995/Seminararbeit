@@ -4,16 +4,6 @@
 	year = {2022},
 	url={https://www.kobold.ai/clustering-guide/}
 }
-
-@article{strehl2002cluster,
-  title={Cluster ensembles---a knowledge reuse framework for combining multiple partitions},
-  author={Strehl, Alexander and Ghosh, Joydeep},
-  journal={Journal of machine learning research},
-  volume={3},
-  number={Dec},
-  pages={583--617},
-  year={2002}
-}
 @article{alqurashi2019clustering,
   title={Clustering ensemble method},
   author={Alqurashi, Tahani and Wang, Wenjia},
@@ -23,6 +13,15 @@
   pages={1227--1246},
   year={2019},
   publisher={Springer}
+}
+@article{strehl2002cluster,
+  title={Cluster ensembles---a knowledge reuse framework for combining multiple partitions},
+  author={Strehl, Alexander and Ghosh, Joydeep},
+  journal={Journal of machine learning research},
+  volume={3},
+  number={Dec},
+  pages={583--617},
+  year={2002}
 }
 @article{vega2011survey,
   title={A survey of clustering ensemble algorithms},
@@ -43,4 +42,12 @@
   pages={359--392},
   year={1998},
   publisher={SIAM}
+}
+@inproceedings{jhala2006practical,
+  title={A practical and complete approach to predicate refinement},
+  author={Jhala, Ranjit and McMillan, Kenneth L},
+  booktitle={International Conference on Tools and Algorithms for the Construction and Analysis of Systems},
+  pages={459--473},
+  year={2006},
+  organization={Springer}
 }

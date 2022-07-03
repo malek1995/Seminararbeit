@@ -53,6 +53,38 @@
       \field{pages}{1227\bibrangedash 1246}
       \range{pages}{20}
     \endentry
+    \entry{jhala2006practical}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=0b731274f4d045521bac73df419287ea}{%
+           family={Jhala},
+           familyi={J\bibinitperiod},
+           given={Ranjit},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3616d5a3016d57a66323bf8a08013af1}{%
+           family={McMillan},
+           familyi={M\bibinitperiod},
+           given={Kenneth\bibnamedelima L},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{0694c75ceeab15117ea96c9a4b700e17}
+      \strng{fullhash}{0694c75ceeab15117ea96c9a4b700e17}
+      \strng{bibnamehash}{0694c75ceeab15117ea96c9a4b700e17}
+      \strng{authorbibnamehash}{0694c75ceeab15117ea96c9a4b700e17}
+      \strng{authornamehash}{0694c75ceeab15117ea96c9a4b700e17}
+      \strng{authorfullhash}{0694c75ceeab15117ea96c9a4b700e17}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Tools and Algorithms for the Construction and Analysis of Systems}
+      \field{title}{A practical and complete approach to predicate refinement}
+      \field{year}{2006}
+      \field{pages}{459\bibrangedash 473}
+      \range{pages}{15}
+    \endentry
     \entry{karypis1998fast}{article}{}
       \name{author}{2}{}{%
         {{hash=3db7df6401b206bb040d6735adbe81e2}{%
@@ -176,6 +208,48 @@
       \field{year}{2011}
       \field{pages}{337\bibrangedash 372}
       \range{pages}{36}
+    \endentry
+    \entry{wattuya2008random}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=d8270b5be32a3e8ed92909f607694853}{%
+           family={Wattuya},
+           familyi={W\bibinitperiod},
+           given={Pakaket},
+           giveni={P\bibinitperiod}}}%
+        {{hash=29f9b25a4e20e911977e7b1eba0860aa}{%
+           family={Rothaus},
+           familyi={R\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d9511bf7a0d82cb751035bbcc3cf9499}{%
+           family={Prassni},
+           familyi={P\bibinitperiod},
+           given={J-S},
+           giveni={J\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=b2542cd236348bdb5ff38795cb42a130}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Xiaoyi},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{ec6480c3852a52281901210838e45994}
+      \strng{fullhash}{689fa14f545a3016da8552d64b8d5719}
+      \strng{bibnamehash}{ec6480c3852a52281901210838e45994}
+      \strng{authorbibnamehash}{ec6480c3852a52281901210838e45994}
+      \strng{authornamehash}{ec6480c3852a52281901210838e45994}
+      \strng{authorfullhash}{689fa14f545a3016da8552d64b8d5719}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2008 19th International Conference on Pattern Recognition}
+      \field{title}{A random walker based approach to combining multiple segmentations}
+      \field{year}{2008}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
     \endentry
   \enddatalist
 \endrefsection

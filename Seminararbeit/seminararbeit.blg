@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'seminararbeit.blg'
-[145] biber-MSWIN64:340> INFO - === 
-[197] Biber.pm:418> INFO - Reading 'seminararbeit.bcf'
-[292] Biber.pm:972> INFO - Found 5 citekeys in bib section 0
-[305] Biber.pm:4383> INFO - Processing section 0
-[324] Biber.pm:4574> INFO - Looking for bibtex file 'referenzen.bib' for section 0
-[359] bibtex.pm:1713> INFO - LaTeX decoding ...
-[372] bibtex.pm:1518> INFO - Found BibTeX data source 'referenzen.bib'
-[435] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[435] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[435] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[435] Biber.pm:4209> INFO - No sort tailoring available for locale 'de-DE'
-[457] bbl.pm:654> INFO - Writing 'seminararbeit.bbl' with encoding 'UTF-8'
-[459] bbl.pm:757> INFO - Output to seminararbeit.bbl
+[101] biber-MSWIN64:340> INFO - === 
+[132] Biber.pm:418> INFO - Reading 'seminararbeit.bcf'
+[227] Biber.pm:972> INFO - Found 7 citekeys in bib section 0
+[240] Biber.pm:4383> INFO - Processing section 0
+[251] Biber.pm:4574> INFO - Looking for bibtex file 'referenzen.bib' for section 0
+[287] bibtex.pm:1713> INFO - LaTeX decoding ...
+[298] bibtex.pm:1518> INFO - Found BibTeX data source 'referenzen.bib'
+[355] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[355] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[355] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[355] Biber.pm:4209> INFO - No sort tailoring available for locale 'de-DE'
+[365] bbl.pm:654> INFO - Writing 'seminararbeit.bbl' with encoding 'UTF-8'
+[368] bbl.pm:757> INFO - Output to seminararbeit.bbl
