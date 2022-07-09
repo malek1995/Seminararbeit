@@ -31,9 +31,16 @@ Ziel von Clustering:
 	\item Ähnliche Datenpunkte (Objekte) sollen im selben Cluster sein. 
 	\item Datenpunkte im verschiedenen Cluster soll möglichst unähnlich sein.   
 \end{itemize}
-Also Clustering führt zu der Verringerung von der Komplexität.\\[4pt]
 Die gefundenen Ähnlichkeitsgruppen können graphentheoretisch, hierarchisch, partitionierend oder optimierend sein. Inzwischen gibt es im Clustering eine große Vielfalt an Methoden, die eingesetzt werden können. Das hängt aber vom Anwendungsfall und der Größe der Datenmenge ab.\\[4pt]
-Was man aber dabei beachten soll, dass die Algorithmen verschiedene Ergebnisse liefern können \cite{onlinequelle1}. 
+Was man aber dabei beachten soll, dass die Algorithmen verschiedene Ergebnisse liefern können \cite{onlinequelle1}. In den nächsten Abschnitten behandeln wir folgendes:
+\begin{itemize}
+	\item K-Means 
+	\item Ensemble Clustering und das Ensemble Problem
+	\item Zielfunktion
+	\item Effiziente consensus Funktion
+	\item Cluster-based Similarity Partitioning Algorithm
+	\item Anwendungen
+\end{itemize}
 
 \section{K-Means als Beispiel für partitionierende Verfahren}
 Im partitionierenden Verfahren wird ein Clustering mit k Cluster mit minimalen Kosten gesucht. Und bei K-Means wie der Name bereits sagt, sucht das Algorithmus für jeden Cluster einen zentralen Punkt, bei dem die Varianz zu allen umliegenden Punkten möglichst gering ist.
@@ -76,7 +83,7 @@ Gesucht ist jetzt ein kombiniertes Clustering, welches so viele Informationen wi
 
 
 
-\subsection{Objektive Funktion für Ensemble Clustering}
+\subsection{Zielfunktion für Ensemble Clustering}
 Gegeben nun $r$ Gruppierungen mit $\lambda^{(i)}$ ist die $i-te$ Gruppierung, welche $k^{i}$ Clusters hat. Eine $consensus$ Funktion ist wie folgt definiert $\Gamma:\mathbb{N}^{n \times r} \rightarrow \mathbb{N}^{n}$ \cite{strehl2002cluster}.
 \begin{equation} 
 \centerline{ $\Gamma$ : $\{\lambda^{i} \mid i \in {1, \ldots, r}\} \rightarrow \lambda$.}
@@ -100,7 +107,7 @@ Von Gleichung $(3)$ wird einen Maß zwischen einer Menge $\Lambda$ und einem ein
 \begin{equation} 
 	\centerline{$\phi^{(ANMI)}(\Lambda, \hat{\lambda}) = \frac{1}{r} \sum_{q=1}^{r} \phi^{(NMI)}(\hat{\lambda}, \lambda^{(q)}).$}
 \end{equation}
-Das optimale kombinierte Clustering $\lambda^{(k-opt)}$ ist das Clustering mit der maximalen durchschnittlichen gegenseitigen Information, wobei $k$ ist die Anzahl von $consensus$ Clusters. In anderen Worten, $\phi^{(ANMI)}$ ist unsere objektive Funktion und $\lambda^{(k-opt)}$ ist \cite{strehl2002cluster}:
+Das optimale kombinierte Clustering $\lambda^{(k-opt)}$ ist das Clustering mit der maximalen durchschnittlichen gegenseitigen Information, wobei $k$ ist die Anzahl von $consensus$ Clusters. In anderen Worten, $\phi^{(ANMI)}$ ist unsere Zielfunktion und $\lambda^{(k-opt)}$ ist \cite{strehl2002cluster}:
 \begin{equation} 
 	\centerline{$\lambda^{(k-opt)} = \underset{\hat{\lambda}}{\arg\max} \sum_{q=1}^{r} \phi^{(NMI)}(\hat{\lambda}, \lambda^{(q)}),$}
 \end{equation}
@@ -173,21 +180,6 @@ Komplexität sind beide quadratisch in $O(n^2)$ \cite{strehl2002cluster}.
 	\end{center}
 \end{figure}
 
-
-%\begin{center}
-%	$r \cdot S$ = \quad
-%	\begin{tabular}{  l| c c c c c c c}
-%		\quad & $x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ & $x_6$ & $x_7$ \\ \hline 
-%		$x_1$ & 4 & 3 & 2 & 1 & 0 & 0 & 0 \\
-%		$x_2$ & 3 & 4 & 2 & 0 & 1 & 0 & 0 \\
-%		$x_3$ & 2 & 2 & 3 & 1 & 0 & 0 & 0 \\
-%		$x_4$ & 1 & 0 & 1 & 4 & 2 & 0 & 0 \\
-%		$x_5$ & 0 & 1 & 2 & 4 & 1 & 1 & 1 \\
-%		$x_6$ & 0 & 0 & 0 & 0 & 1 & 3 & 3 \\ 
-%		$x_7$ & 0 & 0 & 0 & 0 & 1 & 3 & 3 \\
-%	\end{tabular}
-%\end{center}
-
 \subsection{Mehrstufige Graphenbisektion}
 Ein mehrstufiger Graphbisektionsalgorithmus funktioniert wie folgt: betrachte einen gewichteten Graphen $G_0 = (V_0, E_0)$ mit Gewichten sowohl aus Knoten als auch auf Kanten. Dieser Algorithmus besteht aus den folgenden frei Phasen \cite{karypis1998fast}:
 \begin{itemize}
@@ -198,9 +190,9 @@ Ein mehrstufiger Graphbisektionsalgorithmus funktioniert wie folgt: betrachte ei
 \setcounter{secnumdepth}{3}
 \subsubsection{Vergröberungsphase $(Coarsening)$}:\\
 In diesem Unterabschnitt beschreiben wir die grundlegende Ideen hinter der Vergröberung mit Hilfe von $Matchings$.\\ 
-Bei einem Graphen $G_i = (V_i, E_i)$ kann man einen gröberen Graphen durch Kollabieren benachbarter Knoten erhalten. So wird die Kante zwischen zwei Knoten kollabiert und ein $Multi-Knote$
+Bei einem Graphen $G_i = (V_i, E_i)$ kann man einen gröberen Graphen durch Kollabieren benachbarter Knoten erhalten. So wird die Kante zwischen zwei Knoten kollabiert und ein $Multiknote$
 wird aus diesen beiden Knoten erstellt. Diese Idee von Kollabieren von Kanten lässt sich in Form von $Matching$ beschrieben werden. \\
-Der nächste gröbere Graph $G_{i+1}$ wird also aus $G_i$ konstruiert, indem ein $Matching$ von $G_i$ gefunden wird und die Knoten von diesem $Matching$ zu einem $Multi-Knote$ kollabieren. Alle Konten, die nicht im Matching waren, werden einfach im $G_{i+1}$ kopiert. Da das Ziel des Kollabieren von Knoten mit Hilfe von $Matching$ darin besteht, die Größe des Graphen $G_i$ zu verringern
+Der nächste gröbere Graph $G_{i+1}$ wird also aus $G_i$ konstruiert, indem ein $Matching$ von $G_i$ gefunden wird und die Knoten von diesem $Matching$ zu einem $Multiknote$ kollabieren. Alle Konten, die nicht im Matching waren, werden einfach im $G_{i+1}$ kopiert. Da das Ziel des Kollabieren von Knoten mit Hilfe von $Matching$ darin besteht, die Größe des Graphen $G_i$ zu verringern
 , sollte das $Matching$ eine große Anzahl von Kanten enthalten. 
  Das maximale Matching, das
 die maximale Anzahl von Kanten hat, wird als $maximum$ $Matching$ genannt. Da jedoch die Komplexität der Berechnung eines $maximum$ $Matching$ im Allgemeinen höher ist als die Berechnung eines maximalen Matchings ist, wird maximale Matching bevorzugt. Im verbleibenden Unterabschnitt beschreiben wir zwei Methoden, die wir zur Auswahl maximaler
@@ -223,7 +215,7 @@ Matchings für die Vergröberung.
 
 \subsubsection{Partitionierungsphase}:\\
 Die zweite Phase eines Multilevel-Algorithmus berechnet
-eine qualitativ hochwertige Bisektion (d. h. einen kleinen Kantenschnitt) $P_m$ des groben Graphen $G_m = (V_m, E_m)$,
+eine qualitativ hochwertige Bisektion (d.h. einen kleinen Kantenschnitt) $P_m$ des groben Graphen $G_m = (V_m, E_m)$,
 so dass jeder Teil ungefähr die Hälfte des Knotengewichts des ursprünglichen Graphen enthält. Da bei der Vergröberung die Gewichte der Knoten und Kanten des vergröberten Graphen so eingestellt ist, dass sie die Gewichte der Knoten und Kanten des feineren Graphen widerspiegeln, enthält $G_m$ Informationen, um auf intelligente Weise die balancierte Partitionierung und die kleinen Kantenschnitt-Anforderungen durchzusetzen.\\
 Eine Partition von $G_m$ kann mit verschiedenen Algorithmen erhalten werden, wie z.B \cite{karypis1998fast}:
 \begin{itemize}
@@ -261,29 +253,27 @@ werden in ihre ursprüngliche Partition zurückgeschoben. Dies wird nun als den 
 den nächsten Durchlauf des Algorithmus \cite{jhala2006practical}. 
 
 \section{Anwendungen}
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[width=\textwidth]{Beispiel}
+		\caption{(a)-(c) zeigen drei Eingabesegmentierungen mit
+			dem schlechtesten, dem mittleren und dem besten ANMI. (d)
+			Kombinierte Segmentierung mit dem vorgeschlagenen Algorithmus und
+			(e) Kombinierte Segmentierung mit optimalem K. \cite{wattuya2008random}.}
+	\end{center}
+\end{figure} 
 $Consensus$ Funktionen ermöglichen eine Vielzahl von neuen Ansätzen für
 verschiedene Probleme. Ein dieser Ansatz ist die $Segmentierungskombination$ \cite{wattuya2008random}. In diesem Abschnitt wird nur der Algorithmus von \cite{wattuya2008random} beschrieben. Die Grundlage unseres Kombinationsalgorithmus für die Mehrfachsegmentierung
 Algorithmus ist der Random-Walker-Algorithmus zur Bild
 Segmentierung. Der Random-Walker-Algorithmus wird für einen
 ungerichteten Graphen $G = (V, E, w)$ formuliert, in dem jedes Pixel
-$p_i$ einen entsprechenden Knoten $v_i \in V$ hat. Jede Kante $e_{ij} \in E$  hat ein Gewicht $w_{ij}$, das die Ähnlichkeit zwischen den benachbarten Pixeln $v_i$ und $v_j$  (in 4-Nachbarschaft). Zur Entwicklung eines Segmentierungs
-Ensemble-Kombinationsalgorithmus auf Basis des Random
-Walker benötigen wir drei Komponenten:
-\begin{itemize}
-	\item Graph Generation: In unserem Zusammenhang soll das Gewicht $w_{ij}$ angeben, wie
-	wahrscheinlich die beiden Pixel $p_i$ und $p_j$ zur gleichen
-	Bildregion gehören.  \textbf{something missed}. Wir definieren also die Gewichtungsfunktion als Gaußsche Gewichtung:
-	\begin{equation}
-		\centerline{$w_{ij} = \exp(-\beta \cdot (1- \frac{n_{ij}}{N}))$}
-	\end{equation} 
-	wobei $\beta$ ein freier Parameter des Algorithmus ist. Niedrige Kanten
-	Gewichte weisen auf hohe Wahrscheinlichkeiten für eine Regionsgrenze
-	zwischen zwei benachbarten Pixeln und verhindern, dass ein
-	zufälligen Walker, der diese Grenzen überschreitet.
-	\item Seed Region Generation: Dieser Schnitt wird in zwei Teile geteilt. In dem ersten bauen wir einen neuen Graphen $G^*$ unter Beibehaltung der Kanten nur  mit dem Gewicht $w_{ij} = 1$ und entfernen alle anderen Kanten. In diesem
-	werden im Wesentlichen die Kanten zwischen zwei benachbarten Knoten (Pixeln) beibehalten, die mit hoher Wahrscheinlichkeit zur selben Region gehören. In dem zweiten Teil 
-	\item Segmentation Ensemble Combination
-\end{itemize}
+$p_i$ einen entsprechenden Knoten $v_i \in V$ hat. Jede Kante $e_{ij} \in E$  hat ein Gewicht $w_{ij}$, das die Ähnlichkeit zwischen den benachbarten Pixeln $v_i$ und $v_j$  (in 4-Nachbarschaft). In diesem $Framework$ wird der Anzahl der Regionen in einem Bild als $K$ bezeichnet. Der tatsächliche Anzahl ist eigentlich nicht bekannt. Bei der Berechnung einer Reihe von Kombinationssegmentierungen
+mit $K \in [K_{min}, K_{max}]$ Seed-Regionen, brauchen wir ein Verfahren um
+die optimale Region auszuwählen. In[7] wird die optimale Segmentationskombination $S^{kopt}$ so ausgewählt, dass es die eine mit maximale durchschnittliche gegenseitige Information zwischen alle Segmentastionen $S_q$ in $\Lambda$, wobei $\Lambda  = \{S_1, \ldots ,S_N\}$ ist. Die optimale $S^{kopt}$ wird nach der Gleichung $(5)$ berechnet, wobei $\hat{\lambda}$ bedeckt all mögliche  $K \in [K_{min}, K_{max}]$  Segmentastionen. Ein Beispiel finden Sie in $Abb.4$.
+
+
+
+
 \printbibliography
 
 
